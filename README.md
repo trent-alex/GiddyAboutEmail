@@ -1,7 +1,7 @@
 # Giddy About Email
-Welcome, This is my project to autoomate the emails I receive from AWS workmail.  
+Welcome, This is my project to automate the emails I receive from AWS workmail.  
 
-I started  a small business PivotalLift LLC.  I registered it with SBA, SAM.gov, and grants.gov.  I also use it for aviation sites. The problem is it now getting alot of junk mail.  I dont want to spend time reading each one.
+I started a small business, PivotalLift LLC.  I registered it with SBA, SAM.gov, and grants.gov.  I also use it for aviation sites. The problem is it now getting alot of junk mail.  I dont want to spend time reading each one, but also I want to be responsive to clients or leads.
 
 ## Objectives
 
@@ -18,8 +18,8 @@ EventBridge (schedule) → Batch Lambda + BERT → Categorize & Delete
                                                           ↓
                                                S3 Archive (compliance)
 ```
-### Components
-☁️
+## Components
+
 1. **S3 Storage**
    - single container
    
@@ -32,22 +32,25 @@ EventBridge (schedule) → Batch Lambda + BERT → Categorize & Delete
    - Stores emails in S3
   
 
-4. **Batch Processor Lambda** (3GB, ~120s)
+4.**Batch Processor Lambda** (3GB, ~120s)
    - Loads DistilBERT model
    - Processes 50 emails at once
   
-### Let's  Go
+## Current Process
+On cloud :cloud:---------------------------------
+**✅ S3 Storage** 
+Completed through console pretty easy
 
-✅  **S3 Storage** 
-- completed through console pretty easy
+**✅ SQS**
+Completed both queues through console
 
-✅  **SQS**
-- completed both queues through console
+**✅ Queue Lambda**
+Completed through console
 
-✅  **Queue Lambda**
-- completed through console
-
-
-✅  **Train Bert Model**
-- Used python to capture my emails
--   
+In local Terminal :computer:--------------------
+**✅ Train Bert Model**
+Drafted python script to capture my emails
+  
+**[ ] Batch Lambda** 
+Currently the model exceeds the 250 MB limit for zip file to lambda. It sits at 468 with just to transformer and the pytorch cpu libraries.
+Creating a docker container which has a 10GB limit 
