@@ -32,25 +32,31 @@ EventBridge (schedule) → Batch Lambda + BERT → Categorize & Delete
    - Stores emails in S3
   
 
-4.**Batch Processor Lambda** (3GB, ~120s)
+4. **Batch Processor Lambda** (3GB, ~120s)
    - Loads DistilBERT model
    - Processes 50 emails at once
   
 ## Current Process
-On cloud :cloud:---------------------------------
-**✅ S3 Storage** 
+On cloud :cloud:
+
+**:white_check_mark: S3 Storage** 
 Completed through console pretty easy
 
-**✅ SQS**
+**:white_check_mark: SQS**
+
 Completed both queues through console
 
-**✅ Queue Lambda**
+**:white_check_mark: Queue Lambda**
+
 Completed through console
 
-In local Terminal :computer:--------------------
-**✅ Train Bert Model**
+In local Terminal :computer:
+
+**:white_check_mark: Train Bert Model**
+
 Drafted python script to capture my emails
   
-**[ ] Batch Lambda** 
+**:heavy_exclamation_mark: Batch Lambda** 
 Currently the model exceeds the 250 MB limit for zip file to lambda. It sits at 468 with just to transformer and the pytorch cpu libraries.
-Creating a docker container which has a 10GB limit 
+ 
+:seedling: Opportunity to incorporate docker; Creating a docker container which has a 10GB limit for lambda
