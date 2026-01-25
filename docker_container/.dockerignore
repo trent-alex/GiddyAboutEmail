@@ -1,0 +1,28 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.github
+.ipynb_checkpoints
+batch_lambda_package/
+batch-lambda.zip
+venv/
+.env
+# Added
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+#hugging face
+models/
+.huggingface/
+hub/
+
+#os specific
+.DS_Store
+THumbs.db
+
+#Buildfiles
+Dockerfile
+.dockerignore

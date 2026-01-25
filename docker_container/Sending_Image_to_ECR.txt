@@ -1,0 +1,10 @@
+#Sending Docker image to ECR
+
+# Tag the local image with the full ECR path
+docker tag email-batch-processor:latest "$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:latest"
+
+# Verify the tag was created
+docker images | grep email-batch-processor
+
+# Now push
+docker push "$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:latest"

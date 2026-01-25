@@ -1,3 +1,4 @@
+<p align="center"><img src="images/Giddy_header.png.png" alt="Project Banner" width="800"></p>
 # Giddy About Email
 Welcome, This is my project to automate the emails I receive from AWS workmail.  
 
@@ -6,9 +7,9 @@ I started a small business, PivotalLift LLC.  I registered it with SBA, SAM.gov,
 ## Objectives
 
 1. **Email Management** My LLC is receiving too many random emails, I want an automation to eliminate the unwanted sales so I only have to focus 
-2. **Learn ~AWS Sagemaker~ PyTorch and LLM employment** Yeah, use LLM NLP vice flow control. Maybe even do comparison. Sagemaker endpoint is too expensive.  I just build my own in upload it.
+2. **Learn ~AWS Sagemaker~ PyTorch and LLM employment** I plan to LLM NLP vice flow control on key words. Maybe even do comparison. Sagemaker endpoint is too expensive.  I'll just build my own via pytorch and upload it.
 3. **Keep my AWS costs low** self explanatory
-4. ** Display dashboard on Github**  why not?
+4. **Display dashboard on Github**  why not?
 
 ## Cloud Architecture
 ```
@@ -39,24 +40,20 @@ EventBridge (schedule) → Batch Lambda + BERT → Categorize & Delete
 ## Current Process
 On cloud :cloud:
 
-**:white_check_mark: S3 Storage** 
+**:white_check_mark: S3 Storage** <br>
 Completed through console pretty easy
 
-**:white_check_mark: SQS**
-
+**:white_check_mark: SQS**<br>
 Completed both queues through console
 
-**:white_check_mark: Queue Lambda**
-
+**:white_check_mark: Queue Lambda**<br>
 Completed through console
 
 In local Terminal :computer:
 
-**:white_check_mark: Train Bert Model**
-
+**:white_check_mark: Train Bert Model**<br>
 Drafted python script to capture my emails
   
-**:heavy_exclamation_mark: Batch Lambda** 
-Currently the model exceeds the 250 MB limit for zip file to lambda. It sits at 468 with just to transformer and the pytorch cpu libraries.
- 
+**:heavy_exclamation_mark: Batch Lambda**<br> 
+Currently the model exceeds the 250 MB limit for zip file to lambda. It sits at 468 with just to transformer and the pytorch cpu libraries.  
 :seedling: Opportunity to incorporate docker; Creating a docker container which has a 10GB limit for lambda
